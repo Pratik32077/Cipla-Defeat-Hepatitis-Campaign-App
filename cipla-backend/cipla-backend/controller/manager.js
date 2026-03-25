@@ -56,7 +56,7 @@ exports.addDoctor = async (req, res) => {
 };
 
 // ✅ GET ALL DOCTORS + VIDEOS
-exports.getAllDoctor = async (req, res) => {
+exports.getAllDoctors = async (req, res) => {
     const { id } = req.user;
     let connection;
 

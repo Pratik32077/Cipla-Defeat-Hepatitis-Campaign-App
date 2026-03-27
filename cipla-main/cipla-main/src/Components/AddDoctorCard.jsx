@@ -13,7 +13,7 @@ const specializations = [
   "Rheumatologist", "Urologist", "General Physician", "Surgeon", "Others",
 ];
 
-const AddDoctorCard = ({ setShowForm, setShowVideoForm, setDoctorName, setDoctoeId }) => {
+const AddDoctorCard = ({ setShowForm, setShowVideoForm, setDoctorName, setDoctorId, doctorId }) => {
   const token = useSelector((state) => state.auth.token);
 
   const [formData, setFormData] = useState({

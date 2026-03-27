@@ -20,11 +20,13 @@ const storage = multer.diskStorage({
 // file filter (FIXED)
 const fileFilter = (req, file, cb) => {
   const ext = path.extname(file.originalname).toLowerCase();
-
-  if (ext === '.webm' || ext === '.mp4') {
+  
+  if (ext === '.mp4') {
+    cb(null, true);
+  } else if (file.mimetype.startsWith("video/")) {
     cb(null, true);
   } else {
-    cb(new Error('Only .webm or .mp4 files allowed!'), false);
+    cb(new Error('Only mp4 or video files allowed!'), false);
   }
 };
 
